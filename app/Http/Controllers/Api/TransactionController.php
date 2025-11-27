@@ -130,15 +130,16 @@ class TransactionController extends Controller
      */
     public function index(Request $request)
     {
-        $query = $request->user()->transactions();
+        $user = $request->user();
+        $query = $user->transactions();
 
         // Filter by type
-        if ($request->has('type')) {
+        if ($request->has('type') && !empty($request->type)) {
             $query->where('type', $request->type);
         }
 
         // Filter by status
-        if ($request->has('status')) {
+        if ($request->has('status') && !empty($request->status)) {
             $query->where('status', $request->status);
         }
 
@@ -155,7 +156,7 @@ class TransactionController extends Controller
             ->paginate($request->get('per_page', 15));
 
         return response()->json([
-            'transactions' => TransactionResource::collection($transactions),
+            'transactions' => TransactionResource::collection($transactions->items()),
             'meta' => [
                 'current_page' => $transactions->currentPage(),
                 'last_page' => $transactions->lastPage(),
