@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('transaction_id')->unique();
+            $table->string('transaction_id', 191)->unique();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('type', ['deposit', 'transfer', 'withdrawal'])->default('transfer');
             $table->decimal('amount', 15, 2);
