@@ -26,9 +26,13 @@ return [
         'http://127.0.0.1:5173',
         'http://127.0.0.1:3000',
         'http://127.0.0.1:8080',
+        'https://vue-bank-app.vercel.app',
+        'https://vue-bank-app-git-main-ayanbisi-inioluwa-projects.vercel.app',
     ],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => [
+        '/^https:\/\/vue-bank-.*\.vercel\.app$/',
+    ],
 
     'allowed_headers' => ['*'],
 
