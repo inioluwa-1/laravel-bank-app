@@ -35,7 +35,11 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 # Create storage link
 RUN php artisan storage:link || true
 
+# Copy startup script
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
 # Expose port 8000 and start php-fpm server
 EXPOSE 8000
 
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD ["/usr/local/bin/start.sh"]
