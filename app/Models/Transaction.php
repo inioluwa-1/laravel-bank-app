@@ -32,6 +32,7 @@ class Transaction extends Model
         'sender_account_number',
         'sender_name',
         'status',
+        'created_at',
     ];
 
     /**
