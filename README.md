@@ -2,6 +2,9 @@
 
 A comprehensive banking application API built with Laravel, featuring user management, transactions, beneficiaries, and dashboard analytics.
 
+## The frontend used is Vue 
+The link to the frontend github https://github.com/inioluwa-1/vue-bank-app
+
 ## ✨ Features
 
 ### 🔐 Authentication & Authorization
@@ -263,10 +266,6 @@ app/
 ## 🤝 Contributing
 
 This is a learning project. Feel free to fork and enhance!
-
-## 📄 License
-
-Open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## 📞 Support
 
